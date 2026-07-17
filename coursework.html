@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Graduate coursework — Elvis Tata Tanghang, M.S. in Electrical & Computer Engineering, Carnegie Mellon University.">
+<meta name="theme-color" content="#0d0e10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme: light)">
+<title>Coursework · Elvis Tata Tanghang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  (function(){ try{ var t=localStorage.getItem('theme'); if(t){document.documentElement.setAttribute('data-theme',t);} }catch(e){} })();
+</script>
+<style>
+  :root{
+    --bg:#0d0e10; --bg-soft:#181b1f; --panel:#191c21; --card-top:#191c21; --card-bot:#131519;
+    --line:#33373d; --line-soft:#24272c; --ink:#f4f2ee; --ink-dim:#c3c0b8; --ink-faint:#8f8c84;
+    --accent:#e6c072; --accent-dim:#c2a25a; --nav-bg:rgba(13,14,16,.85);
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+    --maxw:760px;
+  }
+  :root[data-theme="light"]{
+    --bg:#faf8f3; --bg-soft:#eeeae0; --panel:#ffffff; --card-top:#ffffff; --card-bot:#f4f1e9;
+    --line:#cfc9ba; --line-soft:#e0dbcf; --ink:#17150f; --ink-dim:#464238; --ink-faint:#726d62;
+    --accent:#8a6410; --accent-dim:#a07d2c; --nav-bg:rgba(250,248,243,.85);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme]){
+      --bg:#faf8f3; --bg-soft:#eeeae0; --panel:#ffffff; --card-top:#ffffff; --card-bot:#f4f1e9;
+      --line:#cfc9ba; --line-soft:#e0dbcf; --ink:#17150f; --ink-dim:#464238; --ink-faint:#726d62;
+      --accent:#8a6410; --accent-dim:#a07d2c; --nav-bg:rgba(250,248,243,.85);
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .15s,color .15s}
+  a:hover{color:var(--accent);border-color:var(--accent)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  nav.top{position:sticky;top:0;z-index:20;background:var(--nav-bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft);transition:background .3s,border-color .3s}
+  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  nav.top .brand{font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--ink-dim);border:none}
+  nav.top .links{display:flex;align-items:center;gap:20px}
+  nav.top .links a{font-size:13px;color:var(--ink-dim);border:none}
+  nav.top .links a:hover{color:var(--accent)}
+  .theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;padding:0;background:var(--panel);border:1px solid var(--line);border-radius:7px;color:var(--ink-dim);cursor:pointer;transition:color .15s,border-color .15s,background .3s}
+  .theme-toggle:hover{color:var(--accent);border-color:var(--accent-dim)}
+  .theme-toggle svg{width:15px;height:15px;display:block}
+  .theme-toggle .icon-moon{display:none}
+  :root[data-theme="light"] .theme-toggle .icon-sun{display:none}
+  :root[data-theme="light"] .theme-toggle .icon-moon{display:block}
+  @media (prefers-color-scheme: light){:root:not([data-theme]) .theme-toggle .icon-sun{display:none}:root:not([data-theme]) .theme-toggle .icon-moon{display:block}}
+
+  header.page{padding:64px 0 12px}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dim);margin-bottom:16px}
+  h1{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1.1;letter-spacing:-.01em;margin:0 0 12px}
+  .sub{font-size:15px;color:var(--ink-faint);margin:0 0 6px}
+  p.intro{color:var(--ink-dim);margin:20px 0 0}
+
+  section{padding:26px 0 40px}
+  .sec-label{font-family:var(--mono);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-dim);margin:0 0 16px}
+  h2{font-family:var(--serif);font-weight:500;font-size:23px;margin:34px 0 12px;letter-spacing:-.01em}
+
+  table.courses{width:100%;border-collapse:collapse;font-size:14.5px}
+  table.courses caption{caption-side:top;text-align:left;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-dim);padding-bottom:10px}
+  table.courses th{text-align:left;font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint);border-bottom:1px solid var(--line);padding:0 12px 9px 0}
+  table.courses td{padding:11px 12px 11px 0;border-bottom:1px solid var(--line-soft);color:var(--ink-dim);vertical-align:top}
+  table.courses td.title{color:var(--ink);font-weight:500}
+  table.courses td.code{font-family:var(--mono);font-size:12.5px;color:var(--accent-dim);white-space:nowrap}
+  table.courses td.term{font-family:var(--mono);font-size:12.5px;color:var(--ink-faint);white-space:nowrap}
+  table.courses tr:hover td{color:var(--ink)}
+  table.courses th.num,table.courses td.num{text-align:right;white-space:nowrap}
+  table.courses td.units{font-family:var(--mono);font-size:12.5px;color:var(--ink-faint)}
+  table.courses td.grade{font-family:var(--mono);font-size:12.5px;color:var(--ink);font-weight:500}
+  .term-head{display:flex;align-items:baseline;justify-content:space-between;margin:32px 0 10px}
+  .term-head h2{margin:0}
+  .qpa{font-family:var(--mono);font-size:12px;color:var(--ink-faint);letter-spacing:.03em}
+  .cum{margin-top:26px;padding:16px 18px;border:1px solid var(--line);border-radius:9px;background:var(--bg-soft);display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:13px;color:var(--ink-dim)}
+  .cum strong{color:var(--accent);font-weight:500;font-size:16px}
+  .note{font-size:13px;color:var(--ink-faint);margin-top:20px}
+
+  footer{border-top:1px solid var(--line-soft);padding:30px 0 60px;color:var(--ink-faint);font-size:13.5px;margin-top:20px}
+  footer a{color:var(--ink-faint);border:none}
+  footer a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">ET · CMU</a>
+    <div class="links">
+      <a href="index.html">← Back to home</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="page">
+  <div class="wrap">
+    <div class="eyebrow">Academic Background</div>
+    <h1>Graduate Coursework</h1>
+    <p class="sub">M.S. in Electrical &amp; Computer Engineering (Advanced Studies) · Carnegie Mellon University · 2023–2025</p>
+    <p class="intro">Selected graduate courses completed during my master's at CMU, spanning machine learning, deep learning, and speech &amp; language technologies.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-label">Carnegie Mellon University · M.S. ECE (Advanced Study)</div>
+
+    <div class="term-head"><h2>Fall 2023</h2><span class="qpa">Semester QPA 3.50</span></div>
+    <table class="courses">
+      <thead><tr><th>Course</th><th>Code</th><th class="num">Units</th><th class="num">Grade</th></tr></thead>
+      <tbody>
+        <tr><td class="title">Programming for Data Analytics</td><td class="code">ICT 04638</td><td class="num units">12</td><td class="num grade">A</td></tr>
+        <tr><td class="title">Humans, Robots &amp; Cognition</td><td class="code">ICT 04800</td><td class="num units">12</td><td class="num grade">B</td></tr>
+        <tr><td class="title">Applied Stochastic Processes</td><td class="code">ECE 18751</td><td class="num units">12</td><td class="num grade">B+</td></tr>
+        <tr><td class="title">Data Inference &amp; Applied Machine Learning</td><td class="code">ECE 18785</td><td class="num units">12</td><td class="num grade">A-</td></tr>
+        <tr><td class="title">Introduction to Graduate Studies</td><td class="code">ECE 18989</td><td class="num units">1</td><td class="num grade">S</td></tr>
+      </tbody>
+    </table>
+
+    <div class="term-head"><h2>Spring 2024</h2><span class="qpa">Semester QPA 3.62</span></div>
+    <table class="courses">
+      <thead><tr><th>Course</th><th>Code</th><th class="num">Units</th><th class="num">Grade</th></tr></thead>
+      <tbody>
+        <tr><td class="title">Data Structures &amp; Algorithms for Engineers</td><td class="code">ICT 04630</td><td class="num units">12</td><td class="num grade">A</td></tr>
+        <tr><td class="title">Project in AI for Healthcare</td><td class="code">ICT 04801</td><td class="num units">6</td><td class="num grade">A-</td></tr>
+        <tr><td class="title">Introduction to Machine Learning for Engineers</td><td class="code">ECE 18661</td><td class="num units">12</td><td class="num grade">B+</td></tr>
+        <tr><td class="title">Data Analytics</td><td class="code">ECE 18787</td><td class="num units">6</td><td class="num grade">A</td></tr>
+        <tr><td class="title">Applied Computer Vision</td><td class="code">ECE 18799</td><td class="num units">12</td><td class="num grade">B+</td></tr>
+      </tbody>
+    </table>
+
+    <div class="term-head"><h2>Fall 2024</h2><span class="qpa">Semester QPA 3.50</span></div>
+    <table class="courses">
+      <thead><tr><th>Course</th><th>Code</th><th class="num">Units</th><th class="num">Grade</th></tr></thead>
+      <tbody>
+        <tr><td class="title">Natural Language Processing</td><td class="code">LTI 11611</td><td class="num units">12</td><td class="num grade">B</td></tr>
+        <tr><td class="title">Introduction to Deep Learning</td><td class="code">LTI 11685</td><td class="num units">12</td><td class="num grade">A</td></tr>
+        <tr><td class="title">Robotics: Principles &amp; Practice</td><td class="code">ECE 18799</td><td class="num units">12</td><td class="num grade">Audit</td></tr>
+      </tbody>
+    </table>
+
+    <div class="term-head"><h2>Spring 2025</h2><span class="qpa">Semester QPA 3.34</span></div>
+    <table class="courses">
+      <thead><tr><th>Course</th><th>Code</th><th class="num">Units</th><th class="num">Grade</th></tr></thead>
+      <tbody>
+        <tr><td class="title">Generative AI</td><td class="code">MLG 10623</td><td class="num units">12</td><td class="num grade">B</td></tr>
+        <tr><td class="title">Speech Technology for Conversational AI</td><td class="code">LTI 11492</td><td class="num units">12</td><td class="num grade">A-</td></tr>
+        <tr><td class="title">Product Management Essentials I</td><td class="code">S3D 17619</td><td class="num units">6</td><td class="num grade">A</td></tr>
+        <tr><td class="title">Big Data Science</td><td class="code">ECE 18788</td><td class="num units">6</td><td class="num grade">B-</td></tr>
+        <tr><td class="title">Personal Fitness</td><td class="code">PE 69110</td><td class="num units">3</td><td class="num grade">S</td></tr>
+        <tr><td class="title">Beginning Swimming</td><td class="code">PE 69150</td><td class="num units">3</td><td class="num grade">S</td></tr>
+      </tbody>
+    </table>
+
+    <div class="cum"><span>Cumulative QPA · degree awarded May 2025</span><strong>3.50 / 4.0</strong></div>
+    <p class="note">Grades: S = satisfactory (pass/fail). Robotics: Principles &amp; Practice was audited and not factored into QPA.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Elvis Tata Tanghang · <a href="index.html">Home</a></div>
+</footer>
+
+<script>
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('themeToggle');
+    function current(){var s=root.getAttribute('data-theme');return s?s:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');}
+    btn.addEventListener('click',function(){var n=current()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}});
+  })();
+</script>
+
+</body>
+</html>
