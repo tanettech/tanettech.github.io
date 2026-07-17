@@ -6,28 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="Tanghang Elvis Tata — researcher in multilingual speech and low-resource African language technologies at Carnegie Mellon University.">
+    <meta name="theme-color" content="#0e0f11" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
     <title>Tanghang Elvis Tata</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
+    <script>
+        // Set theme before paint to avoid a flash of the wrong theme.
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t) { document.documentElement.setAttribute('data-theme', t); }
+            } catch (e) { }
+        })();
+    </script>
     <style>
+        /* ---------- DARK (default) ---------- */
         :root {
-            --bg: #0e0f11;
-            --bg-soft: #15171a;
-            --panel: #16181c;
-            --line: #26292e;
-            --line-soft: #1e2126;
-            --ink: #e8e6e1;
-            --ink-dim: #a9a7a1;
-            --ink-faint: #75736e;
-            --accent: #c9a86a;
-            --accent-dim: #8f8560;
+            --bg: #0d0e10;
+            --bg-soft: #181b1f;
+            --panel: #191c21;
+            --card-top: #191c21;
+            --card-bot: #131519;
+            --line: #33373d;
+            --line-soft: #24272c;
+            --ink: #f4f2ee;
+            --ink-dim: #c3c0b8;
+            --ink-faint: #8f8c84;
+            --accent: #e6c072;
+            --accent-dim: #c2a25a;
+            --nav-bg: rgba(13, 14, 16, .85);
             --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
             --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
             --maxw: 760px;
+        }
+
+        /* ---------- LIGHT ---------- */
+        :root[data-theme="light"] {
+            --bg: #faf8f3;
+            --bg-soft: #eeeae0;
+            --panel: #ffffff;
+            --card-top: #ffffff;
+            --card-bot: #f4f1e9;
+            --line: #cfc9ba;
+            --line-soft: #e0dbcf;
+            --ink: #17150f;
+            --ink-dim: #464238;
+            --ink-faint: #726d62;
+            --accent: #8a6410;
+            --accent-dim: #a07d2c;
+            --nav-bg: rgba(250, 248, 243, .85);
+        }
+
+        /* Follow system when the user hasn't chosen explicitly */
+        @media (prefers-color-scheme: light) {
+            :root:not([data-theme]) {
+                --bg: #f7f5f0;
+                --bg-soft: #efece4;
+                --panel: #ffffff;
+                --card-top: #ffffff;
+                --card-bot: #f4f1ea;
+                --line: #ddd8cc;
+                --line-soft: #e7e3d9;
+                --ink: #22201c;
+                --ink-dim: #56534c;
+                --ink-faint: #8a867d;
+                --accent: #9a7326;
+                --accent-dim: #b0904e;
+                --nav-bg: rgba(247, 245, 240, .82);
+            }
         }
 
         * {
@@ -47,6 +98,7 @@
             line-height: 1.65;
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
+            transition: background .3s ease, color .3s ease;
         }
 
         a {
@@ -72,9 +124,10 @@
             position: sticky;
             top: 0;
             z-index: 20;
-            background: rgba(14, 15, 17, .82);
+            background: var(--nav-bg);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--line-soft);
+            transition: background .3s ease, border-color .3s ease;
         }
 
         nav.top .wrap {
@@ -94,6 +147,7 @@
 
         nav.top .links {
             display: flex;
+            align-items: center;
             gap: 22px
         }
 
@@ -110,11 +164,64 @@
 
         @media(max-width:600px) {
             nav.top .links {
-                gap: 15px
+                gap: 14px
             }
 
             nav.top .links a.hide-sm {
                 display: none
+            }
+        }
+
+        /* ---- theme toggle ---- */
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 7px;
+            color: var(--ink-dim);
+            cursor: pointer;
+            transition: color .15s, border-color .15s, background .3s;
+        }
+
+        .theme-toggle:hover {
+            color: var(--accent);
+            border-color: var(--accent-dim)
+        }
+
+        .theme-toggle svg {
+            width: 15px;
+            height: 15px;
+            display: block
+        }
+
+        .theme-toggle .icon-moon {
+            display: none
+        }
+
+        .theme-toggle .icon-sun {
+            display: block
+        }
+
+        :root[data-theme="light"] .theme-toggle .icon-sun {
+            display: none
+        }
+
+        :root[data-theme="light"] .theme-toggle .icon-moon {
+            display: block
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root:not([data-theme]) .theme-toggle .icon-sun {
+                display: none
+            }
+
+            :root:not([data-theme]) .theme-toggle .icon-moon {
+                display: block
             }
         }
 
@@ -172,6 +279,7 @@
             border-radius: 6px;
             padding: 7px 13px;
             background: var(--panel);
+            transition: color .15s, border-color .15s, background .3s;
         }
 
         .btn:hover {
@@ -270,7 +378,10 @@
             color: var(--ink-faint);
             border: 1px solid var(--line);
             border-radius: 5px;
-            padding: 4px 9px;
+            padding: 4px 9px
+        }
+
+        a.tag {
             border-bottom: 1px solid var(--line)
         }
 
@@ -301,7 +412,12 @@
             border: 1px solid var(--line);
             border-radius: 9px;
             padding: 18px 18px 16px;
-            background: linear-gradient(180deg, var(--panel), #131519);
+            background: linear-gradient(180deg, var(--card-top), var(--card-bot));
+            transition: border-color .15s, background .3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-dim)
         }
 
         .card h3 {
@@ -423,6 +539,20 @@
                 <a href="#projects">Projects</a>
                 <a href="#experience" class="hide-sm">Experience</a>
                 <a href="#contact">Contact</a>
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode"
+                    title="Toggle theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4.5"></circle>
+                        <path
+                            d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4">
+                        </path>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
@@ -636,6 +766,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            var root = document.documentElement;
+            var btn = document.getElementById('themeToggle');
+            function current() {
+                var set = root.getAttribute('data-theme');
+                if (set) return set;
+                return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            }
+            btn.addEventListener('click', function () {
+                var next = current() === 'dark' ? 'light' : 'dark';
+                root.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) { }
+            });
+        })();
+    </script>
 
 </body>
 
