@@ -813,6 +813,7 @@
                 <a href="#interests" class="hide-sm">Interests</a>
                 <a href="#research">Research</a>
                 <a href="#projects">Projects</a>
+                <a href="#skills" class="hide-sm">Skills</a>
                 <a href="#experience" class="hide-sm">Experience</a>
                 <a href="#contact">Contact</a>
                 <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode"
@@ -971,11 +972,10 @@
                 <div class="entry">
                     <div class="meta"><span class="venue">Ongoing, Under review → 2026 IEEE Spoken Language Technology Workshop · Wakanda AI</span> · Carnegie Mellon
                         University</div>
-                    <h3>Aura-ASR: multilingual speech recognition for 22 African languages</h3>
-                    <p>Multi-stage system (self-supervised CTC encoder → projector → Aura-1B LLM) trained on ~17,000
-                        hours across 22 African languages, reaching <span class="highlight">state-of-the-art</span> WER
-                        on several FLEURS, NCHLT, and BembaSpeech benchmarks and surpassing MMS-1B and OmniASR. Also
-                        built the 24-pair NLLB translation data pipeline and efficiency methods.</p>
+                    <h3>Aura-ASR: Multilingual Speech Recognition and Translation for African Languages</h3>
+                    <p>Multi-stage system (self-supervised CTC encoder → projector → Aura-1B LLM) trained on ~18,000
+                        hours across 22+ African languages, reaching <span class="highlight">state-of-the-art</span> WER
+                        on several FLEURS, NCHLT, and BembaSpeech benchmarks and surpassing MMS-1B and OmniASR. Also contributed to an open benchmarking framework evaluating against SeamlessM4T-v2 across ~7.66M utterances (~19,000 hours), and built a real-time end-to-end speech-to-speech translation pipeline over WebRTC (LiveKit) achieving under 2&nbsp;s latency.</p>
                     <div class="tags">
                         <a class="tag" href="https://huggingface.co/spaces/ElvisTata2024/wakanda-asr-live"
                             target="_blank" rel="noopener">🤗 Live Demo</a>
@@ -1049,6 +1049,67 @@
             </div>
         </section>
 
+        <section id="skills" class="fade-in">
+            <div class="wrap">
+                <div class="sec-label">Technical Skills &amp; Expertise</div>
+                <h2>What I build with</h2>
+                <div class="grid">
+
+                    <div class="card">
+                        <div>
+                            <div class="kicker">Core Languages</div>
+                            <h3>Programming</h3>
+                            <p><strong>Python</strong> (4+ years), <strong>C++</strong>, <strong>SQL</strong>, <strong>Git</strong></p>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Python</span><span class="tag">C++</span><span class="tag">SQL</span><span class="tag">Git</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="kicker">Libraries &amp; Ecosystems</div>
+                            <h3>ML Frameworks</h3>
+                            <p><strong>PyTorch</strong>, <strong>TensorFlow</strong>, <strong>scikit-learn</strong>, <strong>NumPy</strong>, <strong>Hugging Face</strong>, <strong>ESPnet</strong>, <strong>NeMo</strong>, <strong>TensorBoard</strong>, <strong>Weights &amp; Biases</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="kicker">Domain Expertise</div>
+                            <h3>Speech &amp; NLP</h3>
+                            <p>Multilingual &amp; low-resource ASR; streaming ASR (RNN-T, CTC); speech-to-text &amp; speech-to-speech translation (S2TT, S2ST); machine translation; text-to-speech; audio language modeling; language ID; transfer &amp; few-shot learning.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="kicker">Training &amp; Scaling</div>
+                            <h3>Model Development</h3>
+                            <p>Multi-stage speech LLMs; post-training quantization; hyperparameter tuning; structured error analysis; data-efficient training recipes; rigorous evaluation methodologies.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="kicker">Infrastructure &amp; HPC</div>
+                            <h3>Systems &amp; Tools</h3>
+                            <p><strong>Jupyter</strong>, <strong>OpenCV</strong>, <strong>AWS</strong>, <strong>Whisper</strong>, <strong>HPC &amp; multi-GPU training</strong> (SLURM, DDP across supercomputers including Leonardo and Bridges-2).</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="kicker">Spoken &amp; Written</div>
+                            <h3>Languages &amp; Communication</h3>
+                            <p><strong>English</strong> (Native), <strong>French</strong> (Intermediate), <strong>Kinyarwanda</strong> (Beginner), <strong>German</strong> (Basic). Technical leadership, cross-functional collaboration, and open research documentation.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <section id="experience" class="fade-in">
             <div class="wrap">
                 <div class="sec-label">Experience &amp; Education</div>
@@ -1080,10 +1141,8 @@
                         <div>
                             <h3>Teaching Assistant: Carnegie Mellon University</h3>
                             <div class="place">Pittsburgh, PA</div>
-                            <p>Introduction to Deep Learning (11-785, Fall 2025 &amp; Spring 2025) and Introduction to
-                                Machine Learning. Led recitations and office hours, mentored students through
-                                from-scratch CNNs, RNNs, Transformers, and generative models, and designed and graded
-                                assignments.</p>
+                            <p><strong>Introduction to Deep Learning (11-785, Fall 2025 &amp; Spring 2025)</strong>: Led instruction on MLPs, CNNs, RNNs, Transformers, and generative models (VAEs, GANs, diffusion). Supported GPU-accelerated training, data preprocessing, and model evaluation for large cohorts.<br><br>
+                            <strong>Introduction to Machine Learning (Fall 2025)</strong>: Taught core ML foundations including regression, classification, SVMs, decision trees, neural networks, and MLE/MAP estimation.</p>
                         </div>
                     </div>
 
