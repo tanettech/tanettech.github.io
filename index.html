@@ -704,6 +704,99 @@
             opacity: 0.7;
         }
 
+        /* ---- collapsible sections (projects & skills) ---- */
+        details.section-dropdown {
+            border-top: 1px solid var(--line-soft);
+            padding: 36px 0;
+            transition: all 0.3s ease;
+        }
+
+        details.section-dropdown summary {
+            list-style: none;
+            cursor: pointer;
+            outline: none;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            user-select: none;
+        }
+
+        details.section-dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.section-dropdown summary h2 {
+            margin-bottom: 0;
+            transition: color 0.2s ease;
+        }
+
+        details.section-dropdown summary:hover h2 {
+            color: var(--accent);
+        }
+
+        .dropdown-header-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dropdown-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--mono);
+            font-size: 12.5px;
+            font-weight: 500;
+            color: var(--accent);
+            background: var(--panel);
+            border: 1px solid var(--line);
+            padding: 8px 16px;
+            border-radius: 999px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            margin-top: 2px;
+        }
+
+        details.section-dropdown summary:hover .dropdown-toggle-btn {
+            background: var(--accent-bg);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .dropdown-chevron {
+            width: 15px;
+            height: 15px;
+            transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        details[open].section-dropdown .dropdown-chevron {
+            transform: rotate(180deg);
+        }
+
+        details:not([open]).section-dropdown .toggle-text::before {
+            content: "Show ";
+        }
+
+        details[open].section-dropdown .toggle-text::before {
+            content: "Hide ";
+        }
+
+        .dropdown-content {
+            margin-top: 24px;
+            animation: fadeInDropdown 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeInDropdown {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* ---- experience timeline ---- */
         .timeline {
             position: relative;
@@ -990,10 +1083,20 @@
             </div>
         </section>
 
-        <section id="projects" class="fade-in">
-            <div class="wrap">
-                <div class="sec-label">Projects</div>
-                <h2>Things I've built</h2>
+        <details id="projects" class="section-dropdown fade-in">
+            <summary class="wrap">
+                <div class="dropdown-header-content">
+                    <div class="sec-label">Projects</div>
+                    <h2>Things I've built</h2>
+                </div>
+                <div class="dropdown-toggle-btn">
+                    <span class="toggle-text">Projects</span>
+                    <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
+            <div class="wrap dropdown-content">
                 <div class="grid">
 
                     <div class="card">
@@ -1047,12 +1150,22 @@
 
                 </div>
             </div>
-        </section>
+        </details>
 
-        <section id="skills" class="fade-in">
-            <div class="wrap">
-                <div class="sec-label">Technical Skills &amp; Expertise</div>
-                <h2>What I build with</h2>
+        <details id="skills" class="section-dropdown fade-in">
+            <summary class="wrap">
+                <div class="dropdown-header-content">
+                    <div class="sec-label">Technical Skills &amp; Expertise</div>
+                    <h2>What I build with</h2>
+                </div>
+                <div class="dropdown-toggle-btn">
+                    <span class="toggle-text">Skills</span>
+                    <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </summary>
+            <div class="wrap dropdown-content">
                 <div class="grid">
 
                     <div class="card">
@@ -1108,7 +1221,7 @@
 
                 </div>
             </div>
-        </section>
+        </details>
 
         <section id="experience" class="fade-in">
             <div class="wrap">
@@ -1248,6 +1361,22 @@
             } else {
                 elements.forEach(function (el) { el.classList.add('visible'); });
             }
+        })();
+
+        // Auto-open collapsible section when navigated via navbar anchor links
+        (function () {
+            function openIfDetails(id) {
+                if (id && id !== '#') {
+                    var target = document.querySelector(id);
+                    if (target && target.tagName === 'DETAILS' && !target.open) {
+                        target.open = true;
+                    }
+                }
+            }
+            window.addEventListener('hashchange', function () { openIfDetails(window.location.hash); });
+            document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+                link.addEventListener('click', function () { openIfDetails(this.getAttribute('href')); });
+            });
         })();
     </script>
 
