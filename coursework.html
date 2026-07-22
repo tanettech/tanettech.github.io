@@ -42,7 +42,7 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
 
   nav.top{position:sticky;top:0;z-index:20;background:var(--nav-bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft);transition:background .3s,border-color .3s}
-  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  nav.top .wrap{display:flex;align-items:center;justify-content:flex-end;height:56px}
   nav.top .brand{font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--ink-dim);border:none}
   nav.top .links{display:flex;align-items:center;gap:20px}
   nav.top .links a{font-size:13px;color:var(--ink-dim);border:none}
@@ -92,7 +92,6 @@
 
 <nav class="top">
   <div class="wrap">
-    <a class="brand" href="index.html">ET · CMU</a>
     <div class="links">
       <a href="index.html">← Back to home</a>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
